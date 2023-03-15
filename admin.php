@@ -4,6 +4,8 @@ use \Hcode\PageAdmin;
 use \Hcode\Model\User;
 use \Hcode\Model\Product;
 
+
+//Rota para a página inicial do admin.
 $app->get('/admin', function() {
     
 	User::verifyLogin();
@@ -14,6 +16,7 @@ $app->get('/admin', function() {
 
 });
 
+//Rota para a página inicial do login.
 $app->get('/admin/login', function(){
 
 	$page = new PageAdmin([
@@ -27,6 +30,7 @@ $app->get('/admin/login', function(){
 
 });
 
+//Rota para validar o login.
 $app->post('/admin/login', function(){
 
 	User::login($_POST["login"], $_POST["password"]);

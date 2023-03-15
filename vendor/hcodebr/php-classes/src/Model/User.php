@@ -157,9 +157,7 @@ class User extends Model{
 		$sql = new Sql();
 
 		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING (idperson) WHERE a.iduser = :iduser", array(
-
 			":iduser"=>$iduser
-
 		));
 
 		$data = $results[0];
@@ -196,9 +194,7 @@ class User extends Model{
 		$sql = new Sql();
 
 		$sql->query("CALL sp_users_delete(:iduser)", array(
-
 			":iduser"=>$this->getiduser()
-
 		));
 	}
 
